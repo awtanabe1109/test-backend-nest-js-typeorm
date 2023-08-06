@@ -1,0 +1,16 @@
+version: '3.6'
+services:
+  #Postgres Service
+  postgres:
+    image: postgres:alpine
+    environment:
+      POSTGRES_DB: test-backend
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      PGDATA: /data/postgres
+    volumes:
+      - postgres-test-backend:/data/postgres
+    ports:
+      - '5432:5432'
+volumes:
+  postgres-test-backend:
